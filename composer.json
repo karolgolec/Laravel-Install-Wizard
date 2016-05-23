@@ -1,0 +1,35 @@
+{
+    "name": "kargolsan/laravel-install-wizard",
+    "description": "Creator for project in Laravel 5.2. Wizard installer for application of laravel.",
+    "keywords": [
+        "laravel",
+        "installer",
+        "setup"
+    ],
+    "homepage": "https://github.com/kargolsan/laravel-install-wizard",
+    "support": {
+      "issues": "https://github.com/kargolsan/laravel-install-wizard/issues",
+      "source": "https://github.com/kargolsan/laravel-install-wizard"
+    },
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karol Golec",
+            "email": "kargolsan@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+      "php": ">=5.5.9",
+      "illuminate/support": "5.2.*",
+      "laravelcollective/html": "5.2.*"
+    },
+    "requireDev": {
+    },
+    "autoload": {
+      "psr-4": {
+        "KarGolSan\\InstallWizard\\": "src/"
+      }
+    }
+}
