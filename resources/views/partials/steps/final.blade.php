@@ -1,7 +1,1 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: karol
- * Date: 23.05.16
- * Time: 15:27
- */
+<p>{!! trans('install_wizard::steps.final.view.ready_to_go') !!}</p>

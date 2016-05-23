@@ -1,7 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: karol
- * Date: 23.05.16
- * Time: 15:25
- */
+
+return [
+    'default_title' => 'Application install',
+
+    'nav' => [
+        'next' => 'Next',
+        'back' => 'Back',
+        'done' => 'Done',
+    ]
+];

@@ -17,6 +17,7 @@ composer require kargolsan/laravel-install-wizard
     /**
     * Other Service Providers
     */
+    Collective\Html\HtmlServiceProvider::class, // for laravelcollective/html require
     KarGolSan\InstallWizard\ServiceProvider::class,
 ],
 
@@ -24,6 +25,8 @@ composer require kargolsan/laravel-install-wizard
     /**
     * Other aliases
     */
+    'Form' => Collective\Html\FormFacade::class, // for laravelcollective/html require
+    'Html' => Collective\Html\HtmlFacade::class, // for laravelcollective/html require
     'InstallWizard' => KarGolSan\InstallWizard\Facades\InstallWizard::class,
 ],
 ```

@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: karol
- * Date: 23.05.16
- * Time: 15:27
- */
+<div class="form-group">
+    {{ Form::textarea('file_content', $sampleContent, [
+        'class' => 'form-control'
+    ]) }}
+
+    <p class="help-block">{!! trans('install_wizard::steps.env.view.help_text') !!}</p>
+</div>
