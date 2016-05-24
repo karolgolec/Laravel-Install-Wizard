@@ -1,7 +1,38 @@
 <?php
+
+namespace KarGolSan\InstallWizard\Middleware;
+
+use Closure;
+use KarGolSan\InstallWizard\Triggers\TriggerHelper;
+
 /**
- * Created by PhpStorm.
- * User: karol
- * Date: 23.05.16
- * Time: 15:32
+ * Class InstallWizardTrigger
+ *
+ * @package KarGolSan\InstallWizard\Middleware
  */
+class InstallWizardTrigger
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param Closure $next
+     * @param string|null $guard
+     *
+     * @return mixed
+     */
+    public function handle($request, Closure $next, $guard = null)
+    {
+        if (TriggerHelper::shouldWizardBeTriggered()) return $this->redirectToWizard();
+
+        return $next($request);
+    }
+
+    /**
+     * Redirects to the wizard's first step
+     */
+    protected function redirectToWizard()
+    {
+        return redirect()->route('install_wizard.start');
+    }
+}

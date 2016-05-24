@@ -1,7 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: karol
- * Date: 23.05.16
- * Time: 15:32
- */
+
+namespace KarGolSan\InstallWizard\Facades;
+
+use Illuminate\Support\Facades\Facade;
+
+class InstallWizard extends Facade
+{
+    protected static function getFacadeAccessor()
+    {
+        return 'InstallWizard';
+    }
+}

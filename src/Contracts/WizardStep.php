@@ -1,7 +1,45 @@
 <?php
+
+namespace KarGolSan\InstallWizard\Contracts;
+
+use Illuminate\Contracts\Support\MessageProvider;
+
 /**
- * Created by PhpStorm.
- * User: karol
- * Date: 23.05.16
- * Time: 15:31
+ * Interface WizardStep
+ * 
+ * Implement that interface to describe your wizard steps
+ * 
+ * @package KarGolSan\InstallWizard\Contracts
  */
+interface WizardStep extends MessageProvider
+{
+    
+    function __construct($id);
+
+    /**
+     * @return string The unique identifier for the step
+     */
+    function getId();
+
+    /**
+     * @return string The slug shown in the URL when viewing that wizard step
+     */
+    function getSlug();
+
+    /**
+     * @return array The initial form data to be used to populate the step fields
+     */
+    function getFormData();
+
+    /**
+     * @param array $formData An array containing all the form data for that step
+     * 
+     * @return boolean true if the step has been applied successfully 
+     */
+    function apply($formData);
+
+    /**
+     * @return boolean true if the steps has been undone successfully
+     */
+    function undo();
+}
