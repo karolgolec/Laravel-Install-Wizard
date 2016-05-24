@@ -102,4 +102,4 @@ return [
         'storage/framework/' => '775',
         'storage/logs/' => '775',
     ],
-]
+];

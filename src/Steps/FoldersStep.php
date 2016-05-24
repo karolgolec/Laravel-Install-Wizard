@@ -40,8 +40,8 @@ class FoldersStep extends BaseStep
     {
         // App folders
         $folders = $this->getFolders();
-        foreach ($folders as $path => $path) {
-            if (!this->checkFolderPermission($path, $perm)) return false;
+        foreach ($folders as $path => $perm) {
+            if (!$this->checkFolderPermission($path, $perm)) return false;
         }
 
         return true;

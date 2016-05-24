@@ -40,12 +40,12 @@
       * 
       * @return void
       */
-     public function bool()
+     public function boot()
      {
          parent::boot();
          
          $config = $this->app['config'];
-         
+
          // Add the install wizard routes if asked to
          $loadDefaultRoutes = $config->get('install_wizard.routing.load_default');
          if ($loadDefaultRoutes && !$this->app->routesAreCached()) {

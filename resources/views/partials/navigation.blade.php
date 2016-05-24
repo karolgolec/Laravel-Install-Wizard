@@ -11,7 +11,7 @@
         'class' => 'btn btn-primary',
     ]) }}
 @else
-    {{ Form::submit(trans('install_wizard::views.nax.next'), [
+    {{ Form::submit(trans('install_wizard::views.nav.next'), [
         'name' => 'wizard-action-next',
         'class' => 'btn btn-primary',
     ]) }}

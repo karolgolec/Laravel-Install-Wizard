@@ -57,7 +57,4 @@ class DatabaseStep extends BaseStep
     protected function isChecked($formData, $optionName){
         return isset($formData[$optionName]) && $formData[$optionName] == 1;
     }
-    {
-        
-    }
 }

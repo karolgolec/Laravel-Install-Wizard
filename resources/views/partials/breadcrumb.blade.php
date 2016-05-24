@@ -1,6 +1,6 @@
 <ol>
     @php($isCurrent = true)
-    @foreach($allSteps as $id = $step)
+    @foreach($allSteps as $id => $step)
         @php($cssClass = ($isCurrent ? 'iw-current' : ''))
 
         <li class="iw-step-divider {{ $cssClass }}"></li>

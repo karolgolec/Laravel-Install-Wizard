@@ -22,15 +22,15 @@ class EnvFileStep extends BaseStep
         $sampleContent = str_replace('APP_DEBUG=true', 'APP_DEBUG=false', $sampleContent);
 
         return [
-            'sampleContent' => $sampleContent;
-        ]
+            'sampleContent' => $sampleContent
+        ];
     }
     /**
      * @param array $formData An array containing all the form data for that step
      *
      * @return boolean true if the step has been applied successfully
      */
-    function apply($formData)
+    public function apply($formData)
     {
         // Validate form data
         $v = $this->getValidator($formData);
@@ -98,7 +98,7 @@ class EnvFileStep extends BaseStep
     protected function getValidator($formData)
     {
         return \Validator::make($formData, [
-           'file_content' => 'require',
+           'file_content' => 'required',
         ]);
     }
 }

@@ -25,3 +25,11 @@
 @section('wizard.description')
     <h2>{!! trans('install_wizard::steps.' . $currentStep->getId() . '.description') !!}</h2>
 @endsection
+
+@section('wizard.form')
+    @include('install_wizard::partials.steps.' . $currentStep->getId(), $currentStep->getFormData())
+@endsection
+
+@section('wizard.navigation')
+    @include('install_wizard::partials.navigation')
+@endsection

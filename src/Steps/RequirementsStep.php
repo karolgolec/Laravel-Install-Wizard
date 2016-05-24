@@ -15,7 +15,7 @@ class RequirementsStep extends BaseStep
 
         // PHP version
         $requiredPhpVersion = $this->getRequiredPhpVersion();
-        $formData['requirements'][] => [
+        $formData['requirements'][] = [
         'label' => trans('install_wizard::steps.requirements.view.php_version', ['ver' => $requiredPhpVersion]),
         'check' => $this->checkPhpVersion($requiredPhpVersion),
     ];
@@ -26,7 +26,7 @@ class RequirementsStep extends BaseStep
             $formData['requirements'][] = [
                 'label' => trans('install_wizard::steps.requirements.view.php_extension', ['name' => $ext]),
                 'check' => $this->checkPhpExtensionEnabled($ext),
-            ]
+            ];
         }
         
         return $formData;
@@ -36,12 +36,12 @@ class RequirementsStep extends BaseStep
     {
         // PHP version
         $requiredPhpVersion = $this->getRequiredPhpVersion();
-        if (!this->checkPhpVersion($requiredPhpVersion)) return false;
+        if (!$this->checkPhpVersion($requiredPhpVersion)) return false;
         
         // PHP extensions
         $requiredPhpExtensions = $this->getRequiredPhpExtensions();
         foreach ($requiredPhpExtensions as $ext) {
-            if (!this->checkPhpExtensionEnabled($ext)) return false;
+            if (!$this->checkPhpExtensionEnabled($ext)) return false;
         }
         
         return true;
