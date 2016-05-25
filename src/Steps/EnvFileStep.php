@@ -78,6 +78,7 @@ class EnvFileStep extends BaseStep
     protected function readSampleEnvFile()
     {
         $files = ['.env', '.env.backup', '.env.example'];
+
         foreach ($files as $f){
             $f = base_path($f);
             if (file_exists($f)){
@@ -85,9 +86,8 @@ class EnvFileStep extends BaseStep
 
                 return $sampleContent;
             }
-
-            return '';
         }
+        return '';
     }
 
     /**

@@ -3,58 +3,58 @@
 return [
     'requirements' => [
         'slug' => 'requirements',
-        'title' => 'Requirements',
+        'title' => 'Wymagania',
         'breadcrumb' => '<i class="fa fa-server"></i>',
-        'description' => 'Check the server configuration',
+        'description' => 'Sprawdzenie konfiguracji serwera',
         'view' => [
-            'php_version' => 'PHP version is at least :ver',
-            'php_extension' => 'PHP extension enabled: :name',
+            'php_version' => 'PHP w wersji co najmniej :ver',
+            'php_extension' => 'PHP ma aktywne rozszerzenie: :name',
         ],
     ],
 
     'folders' => [
         'slug' => 'folders',
-        'title' => 'Folder permission',
+        'title' => 'Dostęp do folderów',
         'breadcrumb' => '<i class="fa fa-folder"></i>',
-        'description' => 'Check application folder permission',
+        'description' => 'Sprawdzenie dostępu do folderów aplikacji',
         'view' => [
-            'granted' => 'Folder <code class="text-success">:path</code> has permission <code class="text-success">:perm</code>',
-            'missing' => 'Folder <code class="text-danger">:path</code> has permission <code class="text-danger">:perm_actual</code> instead of <code class="text-danger">:perm</code>',
+            'granted' => 'Folder <code class="text-success">:path</code> ma uprawnienia <code class="text-success">:perm</code>',
+            'missing' => 'Folder <code class="text-danger">:path</code> ma uprawnienia <code class="text-danger">:perm_actual</code> zamiast <code class="text-danger">:perm</code>',
         ],
     ],
 
     'env' => [
         'slug' => 'env',
-        'title' => 'Env file',
+        'title' => 'Plik env',
         'breadcrumb' => '<i class="fa fa-file-o"></i>',
-        'description' => 'Main server configuration',
+        'description' => 'Główna konfiguracja serwera',
         'errors' => [
-            'cannot_write_file' => 'Failed to write the .env file. Please check that you have the permission',
-            'cannot_backup_file' => 'Failed to backup the current .env file, reverting to the sample file',
+            'cannot_write_file' => 'Nie udało się zapisać pliku .env. Proszę sprawdzić uprawnienia',
+            'cannot_backup_file' => 'Nie udało się odtworzyć kopii zapasowej pliku .env, z pliku .env.backup',
         ],
         'view' => [
-            'help_text' => 'Creates the <code>.env</code> file required to configure database, mailer, etc. If you have a <code>.env.example</code> file, it will be used as a template'
+            'help_text' => 'Tworzenie wymaganego pliku konfiguracyjnego <code>.env</code> do konfiguracji bazy danych, wysyłania wiadomości, itd. Jeśli masz plik <code>.env.example</code>, będzie on użyty jako szablon'
         ],
     ],
 
     'database' => [
         'slug' => 'database',
-        'title' => 'Database',
+        'title' => 'Baza danych',
         'breadcrumb' => '<i class="fa fa-database"></i>',
-        'description' => 'Install tables and initial data',
+        'description' => 'Instalacja tabel i inicjowanie danych',
         'view' => [
-            'refresh_db' => 'Replace the database schema with <code>artisan migrate:refresh</code> <em>(else, simply update it with <code>artisan migrate</code>)</em>',
-            'enable_seeding' => 'Seed the database using the <code>artisan db:seed</code> command',
+            'refresh_db' => 'Zamiana schematu bazy danych z użyciem <code>artisan migrate:refresh</code> <em>(w innym przypadku baza danych zostanie zaktualizowana z użyciem <code>artisan migrate</code>)</em>',
+            'enable_seeding' => 'Wysłanie danych do tabel w bazie danych z użyciem komendy<code>artisan db:seed</code>',
         ],
     ],
 
     'final' => [
         'slug' => 'congratulations',
-        'title' => 'Congratulations',
+        'title' => 'Gratulacje',
         'breadcrumb' => '<i class="fa fa-child"></i>',
-        'description' => 'Install is over',
+        'description' => 'Instalacja zakończona',
         'view' => [
-            'ready_to_go' => 'The application has been configured properly. You should now be able to use it. Enjoy!',
+            'ready_to_go' => 'Aplikacja jest poprawnie skonfigurowana. Można w pełni korzystać z aplikcaji. Powodzenia!',
         ],
     ],
 ];

@@ -5,7 +5,11 @@
 @endsection
 
 @section('wizard.header')
-    <h1 class="iw-step-title">{!! trans('install_wizard::steps.' . $currentStep->getId() . '.title') !!}</h1>
+    <h1>
+        <i class="fa fa-cubes" aria-hidden="true"></i>
+        {!! trans('install_wizard::views.default_title') !!}:
+        <small>{!! strtolower(trans('install_wizard::steps.' . $currentStep->getId() . '.title')) !!}</small>
+    </h1>
 @endsection
 
 @section('wizard.breadcrumb')
@@ -20,6 +24,10 @@
             @endforeach
         </div>
     @endif
+@endsection
+
+@section('wizard.title_step')
+    <h1>{!! trans('install_wizard::steps.' . $currentStep->getId() . '.title') !!}</h1>
 @endsection
 
 @section('wizard.description')

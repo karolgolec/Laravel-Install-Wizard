@@ -11,47 +11,50 @@
     <!-- Styles (using Bootstrap as default -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset('vendor/install_wizard/css/' . config('install_wizard.theme') . '.css') }}"
+    <link rel="stylesheet" href="{{ asset('vendor/install_wizard/css/' . config('install_wizard.theme') . '.css') }}">
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
-            {!! Form::open([
-                'route' => ['install_wizard.submit', $currentStep->getSlug()],
-                'files' => true,
-            ]) !!}
-
-            <div class="iw-wizard">
-                <div class="iw-step-header">
-                    @yield('wizard.header')
-                </div>
-
-                <div class="iw-step-breadcrumb">
-                    @yield('wizard.breadcrumb')
-                </div>
-
-                <div class="iw-step-description">
-                    @yield('wizard.header')
-                </div>
-
-                <div class="iw-step-errors">
-                    @yield('wizard.errors')
-                </div>
-
-                <div class="iw-step-form">
-                    @yield('wizard.form')
-                </div>
-
-                <div class="iw-step-navigation">
-                    @yield('wizard.navigation')
-                </div>
+    <div class="container">
+        <div class="row ">
+            <div class="iw-default_title">
+                @yield('wizard.header')
             </div>
+            <div class="iw-breadcrumb">
+                @yield('wizard.breadcrumb')
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {!! Form::open([
+                    'route' => ['install_wizard.submit', $currentStep->getSlug()],
+                    'files' => true,
+                ]) !!}
+                <div>
+                    <div class="iw-step-title_step">
+                        @yield('wizard.title_step')
+                    </div>
 
-            {!! Form::close() !!}
+                    <div class="iw-description">
+                        @yield('wizard.description')
+                    </div>
+
+                    <div class="iw-errors">
+                        @yield('wizard.errors')
+                    </div>
+
+                    <div class="iw-step-form">
+                        @yield('wizard.form')
+                    </div>
+
+                    <div class="iw-navigation">
+                        @yield('wizard.navigation')
+                    </div>
+                </div>
+
+                {!! Form::close() !!}
+            </div>
         </div>
     </div>
-</div>
 
 <!-- jQuery first, then Bootstrap JS. -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

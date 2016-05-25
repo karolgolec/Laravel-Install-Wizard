@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'default_title' => 'Application install',
+    'default_title' => 'Instalator aplikacji',
 
     'nav' => [
-        'next' => 'Next',
-        'back' => 'Back',
-        'done' => 'Done',
+        'next' => 'Dalej',
+        'back' => 'Wstecz',
+        'done' => 'Zakończ',
     ]
 ];
