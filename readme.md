@@ -74,3 +74,32 @@ Route::group([
 ```
 
 This way, the setup wizard will only be triggered when trying to access the administration panel.
+
+The middleware to trigger the setup wizard should be put as the first one of the middleware list
+
+### Publish assets 
+
+To get the CSS right, you need to at least publish the package assets to your public directory:
+
+```
+php artisan vendor:publish --provider="KarGolSan\InstallWizard\ServiceProvider" --tag="assets"
+```
+
+Optionally, you can publish more files from the package in order to be able to override them. Use the artisan 
+command like you would for any other package (will publish files from all vendor packages):
+
+```
+php artisan vendor:publish
+```
+
+Or you can publish only some of the package files to override just what you need. The library has tagged them into 4 
+different categories (assets category has been published before):
+
+```
+php artisan vendor:publish --provider="KarGolSan\InstallWizard\ServiceProvider" --tag="config"
+php artisan vendor:publish --provider="KarGolSan\InstallWizard\ServiceProvider" --tag="views"
+php artisan vendor:publish --provider="KarGolSan\InstallWizard\ServiceProvider" --tag="translations"
+```
+
+If you had published some files before and want to overwrite them, use the `--force` flag with the artisan commands 
+above.
