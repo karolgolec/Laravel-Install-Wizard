@@ -30,3 +30,45 @@ composer require kargolsan/laravel-install-wizard
     'InstallWizard' => KarGolSan\InstallWizard\Facades\InstallWizard::class,
 ],
 ```
+
+### Declare the required middleware
+
+Add the following line to your `app/Http/Kernel.php` file:
+
+```php
+protected $middlewareGroups = [
+    // ...
+    // Other Middleware
+    // ...
+    'install_wizard' => [
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        'install_wizard.initializer',
+    ]
+];
+
+protected $routeMiddleware = [
+    // ...
+    // Other Middleware
+    // ...
+    'install_wizard.initializer' => \KarGolSan\InstallWizard\Middleware\SetupWizardInitializer::class,
+    'install_wizard.trigger'     => \KarGolSan\InstallWizard\Middleware\SetupWizardTrigger::class,
+];
+```
+
+### Enable the middleware to launch the wizard if necessary
+
+If you want to launch the install wizard automatically when required, you need to add the `SetupWizardTrigger` middleware
+to the routes you wish to protect. For instance, if you have a route group to show an administration panel, you could 
+do it there:
+
+```php
+Route::group([
+    'prefix'     => 'admin', 
+    'middleware' => 'install_wizard.trigger'
+], function () {
+        // ...
+});
+```
+
+This way, the setup wizard will only be triggered when trying to access the administration panel.
