@@ -51,8 +51,8 @@ protected $routeMiddleware = [
     // ...
     // Other Middleware
     // ...
-    'install_wizard.initializer' => \KarGolSan\InstallWizard\Middleware\SetupWizardInitializer::class,
-    'install_wizard.trigger'     => \KarGolSan\InstallWizard\Middleware\SetupWizardTrigger::class,
+    'install_wizard.initializer' => \KarGolSan\InstallWizard\Middleware\InstallWizardInitializer::class,
+    'install_wizard.trigger'     => \KarGolSan\InstallWizard\Middleware\InstallWizardTrigger::class,
 ];
 ```
 
