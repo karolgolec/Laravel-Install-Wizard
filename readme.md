@@ -2,6 +2,8 @@
 
 A Laravel package to help you build a web setup wizard for your application
 
+![laravel-install-wizard](https://cloud.githubusercontent.com/assets/12084504/15552118/5cbd36aa-22b9-11e6-81b2-49b735bd7f61.png)
+
 ## Setup
 
 ### Add the package to your project
